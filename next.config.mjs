@@ -7,15 +7,7 @@ const nextConfig = {
     path: '',
   },
   assetPrefix: './',
-  target: 'serverless', // Add this line to set the target to 'serverless'
-  exportPathMap: async function () {
-    return {
-      '/': { page: '/' },
-      // Add other routes as needed
-    };
-  },
-  // Use the "output: 'export'" option
-  output: 'export',
+  output: 'export'
 };
 
 export default nextConfig;
