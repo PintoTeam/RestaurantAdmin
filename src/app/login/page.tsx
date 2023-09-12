@@ -20,12 +20,14 @@ export default function Login() {
 
   const handleClick = async () => {
     const response = await loginUser(userInfo);
-    setToken(response.data.token);
-    const userId = getUserId(token ?? "");
-    const userData: User = await getUser(userId, token ?? "");
-    setUser(userData);
-    setUserInfo({ userName: "", password: "" });
-    router.push("/");
+    if (response?.data?.token) {
+      setToken(response.data.token);
+      const userId = getUserId(token ?? "");
+      const userData: User = await getUser(userId, token ?? "");
+      setUser(userData);
+      setUserInfo({ userName: "", password: "" });
+      router.push("/");
+    }
   };
 
   useEffect(() => {
