@@ -1,3 +1,5 @@
+"use client";
+
 import { Sidebar } from "@/components";
 import "./globals.css";
 import type { Metadata } from "next";
@@ -15,9 +17,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="flex flex-row bg-background h-[100vh] justify-stretch">
-        <section className="basis-2/12 p-4">
+        <div className="basis-2/12 p-4">
           <Sidebar />
-        </section>
+        </div>
         <section className="basis-10/12 py-4 px-8 min-h-full">
           {children}
         </section>
