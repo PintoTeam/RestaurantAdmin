@@ -29,7 +29,7 @@ export function Sidebar() {
           {isAuth && (
             <>
               <li>
-                <Link href="/protected/test">Protected Test</Link>
+                <Link href="/test">Protected Test</Link>
               </li>
             </>
           )}

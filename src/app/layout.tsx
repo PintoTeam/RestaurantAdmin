@@ -14,12 +14,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="flex flex-row bg-background h-[100vh] justify-stretch">
-        <div className="basis-2/12 p-4">
-          <Sidebar />
-        </div>
-        <section className="basis-10/12 py-4 px-8 min-h-full">
-          {children}
-        </section>
+        {children}
       </body>
     </html>
   );

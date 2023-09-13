@@ -19,7 +19,8 @@ export const useStore = create<AppState>()(
         isAuth: false,
         setToken: (token: string) => set({ token }),
         setUser: (user: User) => set({ user, isAuth: true }),
-        clearUser: () => set({ user: undefined, isAuth: false }),
+        clearUser: () =>
+          set({ user: undefined, isAuth: false, token: undefined }),
       }),
       {
         name: "boilerrest-storage",
