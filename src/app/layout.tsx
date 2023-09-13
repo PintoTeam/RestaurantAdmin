@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "BoilerRest",
+  title: "Vivato",
 };
 
 const spaceGrotesk = Space_Grotesk({

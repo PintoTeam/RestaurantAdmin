@@ -10,7 +10,7 @@ export function Input({ className, ...props }: InputProps) {
     <input
       className={`${
         className ?? ""
-      } py-2 px-3 rounded-md bg-gray-100 w-full disabled:bg-gray-300 duration-300 ease-in-out border`}
+      } py-2 px-3 rounded-md bg-gray-100 disabled:bg-gray-300 duration-300 ease-in-out border`}
       {...props}
     />
   );

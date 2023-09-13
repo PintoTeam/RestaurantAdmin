@@ -1,12 +1,13 @@
 import React from "react";
 
-interface Props {
+type Props = {
   text: string;
-}
+  className: string;
+};
 
-export function Title({ text }: Props) {
+export function Title({ text, className = "" }: Props) {
   return (
-    <h1 className="text-2xl font-semibold uppercase">
+    <h1 className={`${className} text-2xl font-semibold uppercase`}>
       {text}
       <span className="text-secondary-500">.</span>
     </h1>
