@@ -10,7 +10,7 @@ export default function RootLayout({
       <div className="basis-2/12">
         <Sidebar />
       </div>
-      <section className="basis-10/12 py-4 px-8 min-h-full">{children}</section>
+      <section className="basis-10/12 py-5 px-8 min-h-full">{children}</section>
     </>
   );
 }

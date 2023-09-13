@@ -1,17 +1,11 @@
 "use client";
 
+import Menu from "./Menu";
+import { Logo } from "@/components";
+import Authentication from "./Authentication";
 import React, { useEffect, useState } from "react";
-import { Logo, Profile } from "@/components";
-import { Button } from "@/lib";
-import { useStore } from "@/store";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
-import MenuOption from "./MenuOption";
-import { menuRoutes } from "@/utils/routes";
 
 export function Sidebar() {
-  const router = useRouter();
-  const { isAuth, user } = useStore();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -21,27 +15,13 @@ export function Sidebar() {
   if (!mounted) return <></>;
 
   return (
-    <nav className="w-full min-h-full bg-background-dark rounded-br-3xl p-5 flex flex-col justify-between">
+    <nav className="w-full min-h-full bg-background-dark rounded-br-[40px] p-5 flex flex-col justify-between">
       <section className="space-y-4">
         <Logo />
-        <ul className="space-y-3">
-          {menuRoutes.map(({ route, title }) => (
-            <MenuOption href={route} title={title} key={title} />
-          ))}
-        </ul>
+        <Menu />
       </section>
-      <section className="border-t pt-5 border-primary">
-        {!isAuth && (
-          <Button
-            type="button"
-            variant="Primary"
-            className="w-full"
-            onClick={() => router.push("/login")}
-          >
-            Login
-          </Button>
-        )}
-        {isAuth && user && <Profile />}
+      <section className="border-t border-white pt-3">
+        <Authentication />
       </section>
     </nav>
   );
