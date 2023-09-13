@@ -21,7 +21,7 @@ export default function MenuOption({ href, title, icon }: Props) {
       );
     } else {
       setCurrentPathClassNames(
-        "font-normal text-white hover:bg-gray-500 hover:text-black hover:bg-opacity-50"
+        "font-normal text-white hover:bg-gray-500 hover:bg-opacity-50"
       );
     }
   }, [href, path]);
