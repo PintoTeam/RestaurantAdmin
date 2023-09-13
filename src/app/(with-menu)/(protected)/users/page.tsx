@@ -38,14 +38,19 @@ const columns: GridColDef<User>[] = [
   {
     field: "email",
     headerName: "Email",
-    width: 250,
+    minWidth: 250,
+  },
+  {
+    field: "role",
+    headerName: "Role",
+    minWidth: 250,
   },
   {
     field: "dateOfBirth",
     headerName: "Date of Birth",
-    type: "dateTime",
+    type: "date",
     valueGetter: (params: GridValueGetterParams) => {
-      return new Date(`${params.row.registrationDate}Z`);
+      return new Date(`${params.row.dateOfBirth}Z`);
     },
     width: 200,
   },
