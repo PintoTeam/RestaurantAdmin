@@ -1,3 +1,10 @@
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "auto",
+});
+
 interface Props {
   className?: string;
 }
@@ -10,8 +17,10 @@ export function Logo({ className }: Props) {
   };
 
   return (
-    <div className={`${className ?? "text-4xl text-center"}`}>
-      <h1 className="font-light text-primary-500">VIVATO</h1>
+    <div
+      className={`${inter.className} ${className ?? "text-4xl text-center"}`}
+    >
+      <h1 className="font-thin text-primary-500">VIVATO</h1>
     </div>
   );
 }
