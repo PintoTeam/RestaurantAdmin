@@ -6,6 +6,7 @@ import { Button } from "@/lib";
 import { useStore } from "@/store";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import MenuOption from "./MenuOption";
 
 export function Sidebar() {
   const router = useRouter();
@@ -19,18 +20,14 @@ export function Sidebar() {
   if (!mounted) return <></>;
 
   return (
-    <nav className="w-full min-h-full bg-gray-300 rounded-xl p-5 flex flex-col justify-between">
+    <nav className="w-full min-h-full bg-background-dark rounded-br-3xl p-5 flex flex-col justify-between">
       <section className="space-y-4">
         <Logo />
-        <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
+        <ul className="space-y-3">
+          <MenuOption href="/" title="Home" />
           {isAuth && (
             <>
-              <li>
-                <Link href="/test">Protected Test</Link>
-              </li>
+              <MenuOption href="/test" title="Protected Test" />
             </>
           )}
         </ul>

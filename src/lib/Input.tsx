@@ -5,10 +5,12 @@ type InputProps = DetailedHTMLProps<
   HTMLInputElement
 >;
 
-export function Input({ ...props }: InputProps) {
+export function Input({ className, ...props }: InputProps) {
   return (
     <input
-      className="py-2 px-3 rounded-md bg-gray-100 w-full disabled:bg-gray-300 duration-300 ease-in-out border"
+      className={`${
+        className ?? ""
+      } py-2 px-3 rounded-md bg-gray-100 w-full disabled:bg-gray-300 duration-300 ease-in-out border`}
       {...props}
     />
   );
