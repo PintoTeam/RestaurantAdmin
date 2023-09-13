@@ -7,6 +7,7 @@ import { useStore } from "@/store";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import MenuOption from "./MenuOption";
+import { menuRoutes } from "@/utils/routes";
 
 export function Sidebar() {
   const router = useRouter();
@@ -24,12 +25,9 @@ export function Sidebar() {
       <section className="space-y-4">
         <Logo />
         <ul className="space-y-3">
-          <MenuOption href="/" title="Home" />
-          {isAuth && (
-            <>
-              <MenuOption href="/test" title="Protected Test" />
-            </>
-          )}
+          {menuRoutes.map(({ route, title }) => (
+            <MenuOption href={route} title={title} key={title} />
+          ))}
         </ul>
       </section>
       <section className="border-t pt-5 border-primary">
