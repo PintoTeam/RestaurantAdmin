@@ -4,9 +4,14 @@ import { menuRoutes } from "@/utils/routes";
 
 export default function Menu() {
   return (
-    <ul className="space-y-3">
-      {menuRoutes.map(({ route, title }) => (
-        <MenuOption href={route} title={title} key={title} />
+    <ul>
+      {menuRoutes.map(({ route, title, icon }, idx) => (
+        <MenuOption
+          icon={icon}
+          href={route}
+          title={title}
+          key={`${idx}${route}`}
+        />
       ))}
     </ul>
   );

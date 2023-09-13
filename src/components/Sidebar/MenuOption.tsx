@@ -7,31 +7,34 @@ import React, { useEffect, useState } from "react";
 interface Props {
   href: string;
   title: string;
+  icon: React.ReactNode;
 }
 
-export default function MenuOption({ href, title }: Props) {
+export default function MenuOption({ href, title, icon }: Props) {
   const path = usePathname();
   const [currentPathClassNames, setCurrentPathClassNames] = useState("");
 
   useEffect(() => {
     if (path === href) {
-      setCurrentPathClassNames("bg-secondary-500 bg-opacity-25");
+      setCurrentPathClassNames(
+        "bg-white text-secondary-500 font-bold border-l-4 border-secondary-600"
+      );
     } else {
       setCurrentPathClassNames(
-        "hover:border-secondary-400 hover:text-secondary-400 hover:bg-opacity-50"
+        "font-normal text-white hover:bg-gray-500 hover:text-black hover:bg-opacity-50"
       );
     }
   }, [href, path]);
 
   return (
     <li
-      className={`${currentPathClassNames} border border-1 border-white text-white rounded-full text-center transition-all`}
+      className={`${currentPathClassNames} text-center transition-all -mr-5 before:container before:bg-red-500 before:w-52`}
     >
       <Link
-        className="px-2 py-2 font-light text-base block rounded-full"
+        className="px-2 py-2 text-base rounded-full flex space-x-3 items-center"
         href={href}
       >
-        {title}
+        {icon} <span>{title}</span>
       </Link>
     </li>
   );
