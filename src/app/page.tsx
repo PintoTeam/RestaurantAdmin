@@ -29,7 +29,7 @@ export default function Login() {
       console.log(response);
       if (response.success && response?.data?.token) {
         const userId = getUserId(response.data.token);
-        const userData: User = await getUser(userId, token ?? "");
+        const userData: User = await getUser(userId, response.data.token);
         setUser(userData);
         setToken(response.data.token);
         setUserInfo({ userName: "", password: "" });
