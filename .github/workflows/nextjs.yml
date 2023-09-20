@@ -75,14 +75,14 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-      - name: Check if ./out directory exists
+      - name: Check current directory and list files
         run: |
-          if [ -d ./out ]; then
-            echo "Directory exists."
-          else
-            echo "Directory does not exist."
-            exit 1
-          fi
+          # Display the current directory
+          echo "Current Directory: $(pwd)"
+
+          # List all files and directories in the current directory
+          ls -a
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
