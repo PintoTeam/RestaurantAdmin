@@ -11,7 +11,6 @@ function ProtectedComponent({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!token || isTokenExpired(token ?? "")) {
       // Token has expired, take appropriate action (e.g., log out the user)
-      console.log("Token has expired or doesn't exists.");
       clearUser();
       router.push("/");
     } else {

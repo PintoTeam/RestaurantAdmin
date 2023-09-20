@@ -33,6 +33,5 @@ export function isTokenExpired(token: string) {
 
 export function getUserId(token: string) {
   const decodedToken = jwt.decode(token) as JwtPayload;
-  console.log("Decoded token:", decodedToken);
   return decodedToken[ID_TOKEN_KEY];
 }

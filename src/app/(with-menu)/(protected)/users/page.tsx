@@ -9,7 +9,7 @@ import {
   GridValueGetterParams,
 } from "@mui/x-data-grid/models";
 import { User } from "@/global.types";
-import { getAllUsers } from "@/services/user";
+import { getAllUsersByRestaurant } from "@/services/user";
 import { useStore } from "@/store";
 
 const columns: GridColDef<User>[] = [
@@ -70,9 +70,8 @@ export default function Users() {
   const [users, setUsers] = useState<User[]>([]);
   useEffect(() => {
     if (token) {
-      getAllUsers(token)
+      getAllUsersByRestaurant(token)
         .then((data) => {
-          console.log(data);
           setUsers(data);
         })
         .catch((err) => console.log(err));
@@ -84,22 +83,20 @@ export default function Users() {
         <Title text="Users" className="w-6/12" />
         <Input placeholder="Search..." className="w-2/12" />
       </div>
-      <div className="">
-        <DataGrid
-          rows={users}
-          columns={columns}
-          initialState={{
-            pagination: {
-              paginationModel: {
-                pageSize: 10,
-              },
+      <DataGrid
+        rows={users}
+        columns={columns}
+        initialState={{
+          pagination: {
+            paginationModel: {
+              pageSize: 10,
             },
-          }}
-          rowSelection={false}
-          pageSizeOptions={[10, 20, 40, 100]}
-          disableRowSelectionOnClick
-        />
-      </div>
+          },
+        }}
+        rowSelection={false}
+        pageSizeOptions={[10, 20, 40, 100]}
+        disableRowSelectionOnClick
+      />
     </section>
   );
 }

@@ -34,6 +34,6 @@ export const getUser = (id: string, authToken: string) => {
   return callApi(`/User/${id}`, "GET", null, authToken);
 };
 
-export const getAllUsers = (authToken: string) => {
-  return callApi("/User", "GET", null, authToken);
+export const getAllUsersByRestaurant = (authToken: string) => {
+  return callApi("/User/GetAllByRestaurant", "GET", null, authToken);
 };

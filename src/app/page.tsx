@@ -26,7 +26,6 @@ export default function Login() {
   const handleClick = async () => {
     if (isInfoComplete()) {
       const response = await loginUser(userInfo);
-      console.log(response);
       if (response.success && response?.data?.token) {
         const userId = getUserId(response.data.token);
         const userData: User = await getUser(userId, response.data.token);
@@ -41,7 +40,6 @@ export default function Login() {
   };
 
   useEffect(() => {
-    console.log("Is Auth?", isAuth);
     if (isAuth) {
       router.push("/home");
     }
