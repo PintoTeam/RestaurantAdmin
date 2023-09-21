@@ -46,7 +46,7 @@ export default function Login() {
   }, [isAuth]);
 
   return (
-    <main className="min-h-full text-center flex flex-col items-center justify-center w-full bg-background-dark">
+    <main className="min-h-full h-screen text-center flex flex-col items-center justify-center w-full bg-background-dark">
       <section className="w-4/12 space-y-6 flex-col flex justify-center items-center">
         <Logo className="text-center text-[5rem] animate-pulse duration-750" />
         <Input
