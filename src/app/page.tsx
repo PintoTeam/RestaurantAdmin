@@ -50,14 +50,14 @@ export default function Login() {
       <section className="w-4/12 space-y-6 flex-col flex justify-center items-center">
         <Logo className="text-center text-5xl" />
         <Input
-          className="w-3/6"
+          className="xl:w-3/6 lg:w-8/12 md:w-10/12 w-12/12"
           placeholder="Username"
           type="text"
           onChange={handleChange}
           name="userName"
         />
         <Input
-          className="w-3/6"
+          className="xl:w-3/6 lg:w-8/12 md:w-10/12 w-12/12"
           placeholder="Password"
           type="password"
           onChange={handleChange}
@@ -69,7 +69,7 @@ export default function Login() {
           </div>
         )}
         <Button
-          className="w-4/12 bg-secondary-400 hover:bg-secondary-600 disabled:bg-secondary-200"
+          className="xl:w-2/6 lg:w-6/12 md:w-8/12 w-12/12 bg-secondary-400 hover:bg-secondary-600 disabled:bg-secondary-200"
           disabled={!isInfoComplete()}
           onClick={handleClick}
         >
