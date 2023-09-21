@@ -17,7 +17,7 @@ export default function MenuOption({ href, title, icon }: Props) {
   useEffect(() => {
     if (path === href) {
       setCurrentPathClassNames(
-        "bg-white text-secondary-500 font-bold border-l-4 border-secondary-600"
+        "bg-background-light text-secondary-500 font-bold border-l-4 border-secondary-600"
       );
     } else {
       setCurrentPathClassNames(
