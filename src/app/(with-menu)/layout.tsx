@@ -1,4 +1,4 @@
-import { Sidebar } from "@/components";
+import { Appbar, Sidebar } from "@/components";
 
 export default function RootLayout({
   children,
@@ -7,12 +7,15 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <div className="basis-1/12">
-        <Sidebar />
+      <Appbar />
+      <div className="flex flex-row min-h-[92.5vh] justify-stretch bg-background-dark">
+        <div className="md:basis-1/12 w-3/12 bg-background-light">
+          <Sidebar />
+        </div>
+        <section className="basis-11/12 py-5 px-5 min-h-full overflow-auto bg-background-light rounded-tl-[40px]">
+          {children}
+        </section>
       </div>
-      <section className="basis-11/12 py-5 px-8 min-h-full overflow-auto">
-        {children}
-      </section>
     </>
   );
 }

@@ -15,12 +15,11 @@ export function Sidebar() {
   if (!mounted) return <></>;
 
   return (
-    <nav className="w-full min-h-full bg-background-dark rounded-br-[40px] p-5 flex flex-col justify-between">
+    <nav className="w-full h-full lg:min-h-[700px] min-h-[200px] bg-background-dark rounded-br-[40px] px-2 py-5 flex flex-col justify-between">
       <section className="space-y-4">
-        <Logo />
         <Menu />
       </section>
-      <section className="border-t border-white pt-3">
+      <section className="border-t border-white pt-3 flex justify-center">
         <Authentication />
       </section>
     </nav>

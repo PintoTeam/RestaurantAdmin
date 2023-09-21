@@ -18,9 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={spaceGrotesk.className}>
-      <body className="flex flex-row bg-background h-screen justify-stretch">
-        {children}
-      </body>
+      <body className="flex flex-col bg-background">{children}</body>
     </html>
   );
 }

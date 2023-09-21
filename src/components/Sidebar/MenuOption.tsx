@@ -31,7 +31,7 @@ export default function MenuOption({ href, title, icon }: Props) {
       className={`${currentPathClassNames} text-center transition-all -mr-5 before:container before:bg-red-500 before:w-52`}
     >
       <Link
-        className="px-2 py-2 text-base rounded-full flex space-x-3 items-center"
+        className="pl-2 pr-10 py-2 text-base rounded-full flex space-x-3 items-center"
         href={href}
       >
         {icon} <span>{title}</span>

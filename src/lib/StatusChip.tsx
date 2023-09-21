@@ -23,7 +23,7 @@ export function StatusChip({ active, disabled }: StatusChipProps) {
             : "bg-gray-600"
         }`}
       />
-      <span>{active ? "Activo" : "Inactivo"}</span>
+      <span>{active ? "Active" : "Inactive"}</span>
     </div>
   );
 }

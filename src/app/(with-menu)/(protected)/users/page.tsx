@@ -15,9 +15,9 @@ import { useStore } from "@/store";
 const columns: GridColDef<User>[] = [
   {
     field: "state",
-    headerName: "State",
+    headerName: "Status",
     sortable: true,
-    width: 100,
+    width: 120,
     renderCell: (params: GridRenderCellParams) => {
       return <StatusChip active={params.row.isActive} />;
     },
@@ -28,22 +28,29 @@ const columns: GridColDef<User>[] = [
     renderCell: (params: GridRenderCellParams) => {
       return <p>{`${params.row.name} ${params.row.lastName}`}</p>;
     },
-    width: 150,
+    minWidth: 160,
+    flex: 1,
   },
   {
     field: "userName",
     headerName: "Username",
-    width: 150,
+    minWidth: 150,
+    flex: 1,
   },
   {
     field: "email",
     headerName: "Email",
     minWidth: 250,
+    flex: 1,
   },
   {
     field: "role",
     headerName: "Role",
-    minWidth: 250,
+    minWidth: 100,
+    flex: 1,
+    renderCell: (params: GridRenderCellParams) => {
+      return <strong className="uppercase">{`${params.row.role}`}</strong>;
+    },
   },
   {
     field: "dateOfBirth",
@@ -52,7 +59,8 @@ const columns: GridColDef<User>[] = [
     valueGetter: (params: GridValueGetterParams) => {
       return new Date(`${params.row.dateOfBirth}Z`);
     },
-    width: 200,
+    minWidth: 200,
+    flex: 1,
   },
   {
     field: "registrationDate",
@@ -61,7 +69,8 @@ const columns: GridColDef<User>[] = [
     valueGetter: (params: GridValueGetterParams) => {
       return new Date(`${params.row.registrationDate}Z`);
     },
-    width: 200,
+    minWidth: 200,
+    flex: 1,
   },
 ];
 
@@ -79,9 +88,9 @@ export default function Users() {
   }, []);
   return (
     <section className="flex flex-col space-y-5">
-      <div className="flex flex-row justify-between w-full">
-        <Title text="Users" className="w-6/12" />
-        <Input placeholder="Search..." className="w-2/12" />
+      <div className="flex sm:flex-row flex-col sm:space-y-0 space-y-2 justify-between items-center w-full">
+        <Title text="Users" className="w-fit" />
+        <Input placeholder="Search..." className="lg:w-2/12" />
       </div>
       <DataGrid
         rows={users}
@@ -96,6 +105,7 @@ export default function Users() {
         rowSelection={false}
         pageSizeOptions={[10, 20, 40, 100]}
         disableRowSelectionOnClick
+        autoHeight
       />
     </section>
   );

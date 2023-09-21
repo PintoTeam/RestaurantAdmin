@@ -48,7 +48,7 @@ export default function Login() {
   return (
     <main className="min-h-full text-center flex flex-col items-center justify-center w-full bg-background-dark">
       <section className="w-4/12 space-y-6 flex-col flex justify-center items-center">
-        <Logo className="text-center text-5xl" />
+        <Logo className="text-center text-[5rem] animate-pulse duration-750" />
         <Input
           className="xl:w-3/6 lg:w-8/12 md:w-10/12 w-12/12"
           placeholder="Username"

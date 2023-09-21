@@ -7,7 +7,7 @@ type Props = {
 
 export function Title({ text, className = "" }: Props) {
   return (
-    <h1 className={`${className} text-2xl font-semibold uppercase`}>
+    <h1 className={`${className} text-2xl font-semibold uppercase leading-8`}>
       {text}
       <span className="text-secondary-500">.</span>
     </h1>

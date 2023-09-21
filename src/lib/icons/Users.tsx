@@ -1,5 +1,3 @@
-import { SVGProps } from "react";
-
 interface Props {
   className?: string;
 }

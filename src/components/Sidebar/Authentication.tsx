@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "@/lib";
 import { useStore } from "@/store";
-import { Profile } from "@/components";
+import { Logout, Profile } from "@/components";
 import { useRouter } from "next/navigation";
 
 export default function Authentication() {
   const router = useRouter();
-  const { isAuth, user } = useStore();
+  const { isAuth } = useStore();
 
   return (
     <>
@@ -14,13 +14,13 @@ export default function Authentication() {
         <Button
           type="button"
           variant="Primary"
-          className="w-full"
+          className="w-fit"
           onClick={() => router.push("/login")}
         >
           Login
         </Button>
       )}
-      {isAuth && user && <Profile />}
+      {isAuth && <Logout />}
     </>
   );
 }
