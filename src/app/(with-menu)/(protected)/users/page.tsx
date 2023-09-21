@@ -88,7 +88,7 @@ export default function Users() {
   }, []);
   return (
     <section className="flex flex-col space-y-5">
-      <div className="flex sm:flex-row flex-col sm:space-y-0 space-y-2 justify-between items-center w-full">
+      <div className="flex sm:flex-row flex-col sm:space-y-0 space-y-2 sm:justify-between sm:items-center w-full">
         <Title text="Users" className="w-fit" />
         <Input placeholder="Search..." className="lg:w-2/12" />
       </div>
